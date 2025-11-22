@@ -1,8 +1,13 @@
 {
   "functions": {
     "api/xai-proxy.js": {
-      "runtime": "nodejs18.x",
-      "maxDuration": 30
+      "runtime": "@vercel/nodejs@2"
     }
-  }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/xai-proxy.js"
+    }
+  ]
 }
